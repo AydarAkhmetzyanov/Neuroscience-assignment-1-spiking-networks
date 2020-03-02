@@ -18,10 +18,6 @@ K = 1; % coupling strength
 
 v = zeros(length(t),n);
 
-% v_dot =@(v,noise,all_v,num)((-g_l.*(v - E_l ) ...
-%     + I)./C + sqrt(2*D)*noise...
-%     + K/n*sum_couple(v,all_v,num)); 
-
 noise = wgn(length(t)*2,1,0);
 
 tau_cor = [];
@@ -29,7 +25,6 @@ f=0.1; %10
 final = 100; %1
 for k=0:1/f:final
     I = k;
-%    D = k;
     
     v_dot =@(v,noise,all_v,num)((-g_l.*(v - E_l ) ...
         + I)./C_v + sqrt(2*D)*noise...
@@ -71,5 +66,5 @@ end
 figure
 plot(0:1/f:final, tau_cor)
 title('Influence of external stimulus by correlation time')
-xlabel('Amperage, mA')
-ylabel('Correlation time')
+xlabel('mA')
+ylabel('Correlation')
