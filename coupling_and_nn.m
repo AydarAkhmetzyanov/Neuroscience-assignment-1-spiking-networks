@@ -48,19 +48,3 @@ for i=1:n
 end
 legend
 
-%     C_n = t_max/h-1;
-%     C = [];
-%     y_br = mean(v, 'all');
-%     y = mean(v, 2);
-%     y_tilda = y - y_br;
-%     y_tilda_sq_mean = mean(y_tilda.*y_tilda);
-% 
-%     for tau=1:C_n
-% 
-%         y1 = y_tilda(1:end-tau);
-%         y2 = y_tilda(1+tau:end);
-%         C(tau) = mean(y1.*y2)/y_tilda_sq_mean;
-%     end
-% 
-%     figure
-%     plot((1:C_n)*h, C)
